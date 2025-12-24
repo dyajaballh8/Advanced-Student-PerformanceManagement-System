@@ -1,0 +1,137 @@
+Advanced Student Performance Management System
+System Documentation
+________________________________________
+1. Project Overview
+The Advanced Student Performance Management System is a Java-based application designed to help universities efficiently manage and monitor student academic performance.
+The system tracks students, courses, grades, GPA calculations, and attendance records. Additionally, it provides automated alerts for students with low attendance, supporting early academic intervention.
+By automating academic processes, the system reduces manual workload, improves data accuracy, and ensures secure access to performance information for both students and faculty members.
+________________________________________
+2. Project Objectives
+The main objectives of this system are as follows:
+•	Automate GPA calculation and academic performance tracking
+•	Maintain accurate attendance records and generate alerts for low attendance
+•	Provide role-based access control for students and faculty
+•	Integrate a secure database system for storing academic data
+•	Apply Object-Oriented Programming (OOP) principles for clean, maintainable, and scalable code
+________________________________________
+3. Technologies Used
+The system is implemented using the following technologies:
+•	Programming Language: Java
+•	Database Management System: Microsoft SQL Server
+•	Database Connectivity: JDBC (Java Database Connectivity)
+•	Design Paradigm: Object-Oriented Programming (OOP)
+•	Architecture Pattern: DAO (Data Access Object)
+________________________________________
+4. System Users and Roles
+The system supports multiple user roles, each with specific permissions.
+4.1 Students
+Students can:
+•	View their personal academic information
+•	Calculate and view GPA
+•	Check attendance percentage
+•	Receive alerts when attendance falls below 75%
+4.2 Faculty
+Faculty members can:
+•	Enter and update student grades
+•	Define assessments and deadlines
+•	View detailed student performance reports
+4.3 Admin (Conceptual Role)
+The admin role is responsible for:
+•	Managing users, courses, and enrollments
+•	Controlling and maintaining system data
+________________________________________
+5. Object-Oriented Design
+The system follows Object-Oriented Programming principles to ensure modularity, reusability, and maintainability.
+Key OOP Principles Applied
+•	Inheritance: Student and Faculty classes inherit from the abstract User class
+•	Abstraction: Implemented using the abstract User class and the PerformanceTracker interface
+•	Encapsulation: Class attributes are private and accessed through getters and setters
+•	Polymorphism: Methods such as login(), displayInfo(), and logout() are overridden in subclasses
+Main System Classes
+•	User (Abstract Class): Contains shared attributes such as username, password, and role
+•	Student: Handles GPA calculation, attendance management, and student-specific data
+•	Faculty: Manages grades, assessments, and student performance
+•	Course: Stores course information and enrolled students
+•	Enrollment: Links students with courses and records grades and semesters
+•	AlertManager: Generates attendance alerts and performance notifications
+•	DAO Classes: StudentDAO, AttendanceDAO, and EnrollmentDAO handle database operations
+•	DBConnection: Manages JDBC connection with SQL Server
+________________________________________
+6. Database Design
+The system uses SQL Server to store academic and user data securely.
+Database Tables
+Users
+•	UserID (Primary Key)
+•	Username
+•	Password
+•	Role (Student / Faculty)
+Students
+•	StudentID (Primary Key, Foreign Key to Users)
+•	Name
+•	Major
+•	GPA
+•	TotalHours
+Faculty
+•	FacultyID (Primary Key, Foreign Key to Users)
+•	Name
+•	Department
+Courses
+•	CourseID (Primary Key)
+•	CourseCode
+•	CourseName
+•	CreditHours
+Enrollments
+•	EnrollmentID (Primary Key)
+•	StudentID (Foreign Key)
+•	CourseID (Foreign Key)
+•	Semester
+•	GradeType
+•	Score
+•	Year
+Attendance
+•	AttendanceID (Primary Key)
+•	StudentID (Foreign Key)
+•	TotalDays
+•	AttendedDays
+Entity Relationships
+•	Users → Students / Faculty (1:1)
+•	Students → Enrollments (1:N)
+•	Courses → Enrollments (1:N)
+•	Students → Attendance (1:1)
+________________________________________
+7. JDBC and DAO Integration
+The system connects Java with SQL Server using JDBC.
+The DBConnection class establishes and manages the database connection.
+DAO classes are responsible for:
+•	Validating user login credentials
+•	Retrieving student and course data using SQL queries
+•	Fetching grades and calculating GPA
+•	Calculating attendance percentages and generating alerts
+This approach ensures separation of concerns, improves maintainability, and enhances system scalability.
+________________________________________
+8. Graphical User Interface (GUI)
+The application provides a simple and user-friendly GUI, which includes:
+•	Secure login screen
+•	Student dashboard displaying GPA, courses, and attendance
+•	Functional buttons to:
+o	Calculate GPA
+o	View attendance
+o	View alerts
+o	Display personal information
+A conceptual faculty interface is also included for managing grades and assessments.
+Screenshots of the GUI can be added to the final presentation or report.
+________________________________________
+9. Application Features
+Key features of the system include:
+•	Secure authentication and login system
+•	Automated GPA calculation
+•	Attendance tracking with alert generation for attendance below 75%
+•	Role-based access control
+•	Database-driven design using SQL Server
+•	Clean and modular architecture using OOP and DAO patterns
+•	Scalable structure for future enhancements
+________________________________________
+10. Conclusion
+The Advanced Student Performance Management System demonstrates how Java OOP concepts, JDBC, and SQL Server can be effectively integrated to build a comprehensive academic management solution.
+The system simplifies student performance tracking, improves data accuracy, and provides reliable academic reporting for both students and faculty members.
+Its modular and scalable design allows for easy extension and future upgrades, making it suitable for real-world academic environments.
