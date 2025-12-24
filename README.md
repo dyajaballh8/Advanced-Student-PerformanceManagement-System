@@ -1,5 +1,3 @@
-Here is a professional and structured README.md file for your project in English, tailored to your OOP structure, SQL Server database, and GUI design.
-
 🎓 University Performance Management System
 A comprehensive system designed to manage academic performance, built using Object-Oriented Programming (OOP) principles and a professional Swing GUI. The system is fully integrated with a Microsoft SQL Server database for persistent data management.
 
